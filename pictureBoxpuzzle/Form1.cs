@@ -16,25 +16,25 @@ namespace pictureBoxpuzzle
     {
         public Form1()
         {
-            //InitializeComponent();
-            //// pictureBox10.Visible = false;
+            InitializeComponent();
+            //pictureBox10.Visible = false;
             //pictureBox2.Visible = false;
             //pictureBox3.Visible = false;
             //pictureBox4.Visible = false;
-            //pictureBox5.Visible = false;
-            //pictureBox6.Visible = false;
-            //pictureBox7.Visible = false;
-            //pictureBox8.Visible = false;
-            //pictureBox9.Visible = false;
-            //pictureBox10.Visible = false;
-            //pictureBox11.Visible = false;
-            //pictureBox12.Visible = false;
-            //pictureBox13.Visible = false;
-            //pictureBox14.Visible = false;
-            reload();
+            //picturebox5.visible = false;
+            //picturebox6.visible = false;
+            //picturebox7.visible = false;
+            //picturebox8.visible = false;
+            //picturebox9.visible = false;
+            //picturebox10.visible = false;
+            //picturebox11.visible = false;
+            //picturebox12.visible = false;
+            //picturebox13.visible = false;
+            //picturebox14.visible = false;
+
 
         }
-       
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -299,9 +299,29 @@ namespace pictureBoxpuzzle
        //
        void reload()
         {
+            //reset global values
+            path = "";
+            img  = null; im1 =  null; im2  = null; im3 =  null; im4 = null; im5  = null; im6 =  null; im7  = null; im8 =  null; im9 = null;
+            
+            a = 0; c = 0; d = 0;
+            stopwatch.Reset();
 
-            InitializeComponent();
-            // pictureBox10.Visible = false;
+            button1.Enabled = true;
+            comboBox1.Enabled = true;
+            comboBox1.SelectedItem = "Begginner";
+            button3.Enabled = true;
+
+            for (int i = 0; i < 4; i++)
+                pictureboxs1[i].Enabled = true;
+
+            for (int i = 0; i < 9; i++)
+                pictureboxs2[i].Enabled = true;
+
+
+            // InitializeComponent();
+            //Set visibility false of picture boxes
+            pictureboxes1.Visible = false;
+            pictureboxes1.Image = null;
             pictureBox2.Visible = false;
             pictureBox3.Visible = false;
             pictureBox4.Visible = false;
@@ -315,8 +335,9 @@ namespace pictureBoxpuzzle
             pictureBox12.Visible = false;
             pictureBox13.Visible = false;
             pictureBox14.Visible = false;
+            //enable buttons
 
-        }
+    }
 
         //restart button
         private void button4_Click(object sender, EventArgs e)
@@ -474,7 +495,7 @@ namespace pictureBoxpuzzle
          
             else
             {
-
+                pictureboxes1.Visible = true;
                 pictureboxes1.BackgroundImage = bimg1;
                 pictureboxs1[0] = pictureBox2;
                 pictureboxs1[1] = pictureBox3;
@@ -507,8 +528,8 @@ namespace pictureBoxpuzzle
                     for (int i = 0; i < 4; i++)
                         pictureboxs1[i].Visible = true;
 
-                    //for (int i = 0; i < 9; i++)
-                    //    pictureboxs2[i].Hide();
+                    for (int i = 0; i < 9; i++)
+                        pictureboxs2[i].Visible=false;
                 }
 
                 if (lvl == 2)
@@ -535,8 +556,8 @@ namespace pictureBoxpuzzle
 
                     for (int i = 0; i < 9; i++)
                         pictureboxs2[i].Visible = true;
-                    //for (int i = 0; i < 4; i++)
-                    //    pictureboxs1[i].Hide();
+                    for (int i = 0; i < 4; i++)
+                        pictureboxs1[i].Visible=false;
                 }
                 // pictureBox10.Enabled = true;
                 comboBox1.Enabled = false;
